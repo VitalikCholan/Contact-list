@@ -1,0 +1,22 @@
+<div>
+  @if (contact) {
+  <h2>{{ contact.firstName }} {{ contact.lastName }}</h2>
+
+  <div>
+    <label>Phone:</label>
+    <p>{{ contact.phone }}</p>
+  </div>
+
+  <div>
+    <label>Email:</label>
+    <p>{{ contact.email }}</p>
+  </div>
+
+  <div>
+    <label>Address:</label>
+    <p>{{ contact.address }}</p>
+  </div>
+
+  }
+  <button (click)="goBack()">Back to List</button>
+</div>

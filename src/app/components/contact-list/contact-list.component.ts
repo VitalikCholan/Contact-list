@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { Contact } from '../../models/contact.model';
 import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact-list',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterModule],
   templateUrl: './contact-list.component.html',
   styleUrl: './contact-list.component.css',
 })

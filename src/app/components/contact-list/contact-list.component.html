@@ -1,7 +1,8 @@
 <div>
   <h1>Contact List</h1>
+  <button [routerLink]="['/contact/new']">Add Contact</button>
 
-  <div class="search-box">
+  <div>
     <input
       type="text"
       [(ngModel)]="searchTerm"

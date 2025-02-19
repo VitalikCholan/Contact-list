@@ -5,34 +5,94 @@
     <div>
       <label for="firstName">First Name:</label>
       <input id="firstName" type="text" formControlName="firstName" />
+      @if (contactForm.get('firstName')?.invalid &&
+      contactForm.get('firstName')?.touched) {
+      <div>
+        @if (contactForm.get('firstName')?.errors?.['required']) {
+        <span>First name is required</span>
+        } @if (contactForm.get('firstName')?.errors?.['pattern']) {
+        <span>Only letters are allowed</span>
+        } @if (contactForm.get('firstName')?.errors?.['minlength']) {
+        <span>Minimum length is 2 characters</span>
+        }
+      </div>
+      }
     </div>
 
     <div>
       <label for="lastName">Last Name:</label>
       <input id="lastName" type="text" formControlName="lastName" />
+      @if (contactForm.get('lastName')?.invalid &&
+      contactForm.get('lastName')?.touched) {
+      <div>
+        @if (contactForm.get('lastName')?.errors?.['required']) {
+        <span>Last name is required</span>
+        } @if (contactForm.get('lastName')?.errors?.['pattern']) {
+        <span>Only letters are allowed</span>
+        } @if (contactForm.get('lastName')?.errors?.['minlength']) {
+        <span>Minimum length is 2 characters</span>
+        }
+      </div>
+      }
     </div>
 
     <div>
       <label for="phone">Phone:</label>
       <input id="phone" type="tel" formControlName="phone" />
+      @if (contactForm.get('phone')?.invalid &&
+      contactForm.get('phone')?.touched) {
+      <div>
+        @if (contactForm.get('phone')?.errors?.['required']) {
+        <span>Phone is required</span>
+        } @if (contactForm.get('phone')?.errors?.['pattern']) {
+        <span>Phone must be in format +380XXXXXXXXX</span>
+        }
+      </div>
+      }
     </div>
 
     <div>
       <label for="email">Email:</label>
       <input id="email" type="email" formControlName="email" />
+      @if (contactForm.get('email')?.invalid &&
+      contactForm.get('email')?.touched) {
+      <div>
+        @if (contactForm.get('email')?.errors?.['required']) {
+        <span>Email is required</span>
+        } @if (contactForm.get('email')?.errors?.['email']) {
+        <span>Please enter a valid email address</span>
+        }
+      </div>
+      }
     </div>
 
     <div>
       <label for="birthDate">Birth Date:</label>
       <input id="birthDate" type="date" formControlName="birthDate" />
+      @if (contactForm.get('birthDate')?.invalid &&
+      contactForm.get('birthDate')?.touched) {
+      <div>
+        @if (contactForm.get('birthDate')?.errors?.['required']) {
+        <span>Birth date is required</span>
+        }
+      </div>
+      }
     </div>
 
     <div>
       <label for="address">Address:</label>
       <input id="address" type="text" formControlName="address" />
+      @if (contactForm.get('address')?.invalid &&
+      contactForm.get('address')?.touched) {
+      <div>
+        @if (contactForm.get('address')?.errors?.['required']) {
+        <span>Address is required</span>
+        }
+      </div>
+      }
     </div>
 
-    <div class="buttons">
+    <div>
       <button type="submit" [disabled]="!contactForm.valid">
         {{ isEditMode ? "Update" : "Add" }} Contact
       </button>

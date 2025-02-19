@@ -17,6 +17,7 @@
       <p>{{ contact.phone }}</p>
       <button [routerLink]="['/contact', contact.id]">View Details</button>
       <button [routerLink]="['/contact', contact.id, 'edit']">Edit</button>
+      <button (click)="deleteContact(contact.id)">Delete</button>
     </div>
     }
   </div>

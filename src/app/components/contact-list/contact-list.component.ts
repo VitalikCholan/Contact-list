@@ -21,6 +21,17 @@ export class ContactListComponent implements OnInit {
     this.contacts = this.contactService.getContacts();
   }
 
+  loadContacts() {
+    this.contacts = this.contactService.getContacts();
+  }
+
+  deleteContact(id: number) {
+    if (confirm('Are you sure you want to delete this contact?')) {
+      this.contactService.deleteContact(id);
+      this.loadContacts(); // Refresh the list
+    }
+  }
+
   get filteredContacts(): Contact[] {
     return this.contacts.filter(
       (contact) =>

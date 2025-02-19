@@ -6,7 +6,8 @@
       <label for="firstName">First Name:</label>
       <input id="firstName" type="text" formControlName="firstName" />
       @if (contactForm.get('firstName')?.invalid &&
-      contactForm.get('firstName')?.touched) {
+      contactForm.get('firstName')?.touched ||
+      contactForm.get('firstName')?.dirty) {
       <div>
         @if (contactForm.get('firstName')?.errors?.['required']) {
         <span>First name is required</span>
@@ -23,7 +24,8 @@
       <label for="lastName">Last Name:</label>
       <input id="lastName" type="text" formControlName="lastName" />
       @if (contactForm.get('lastName')?.invalid &&
-      contactForm.get('lastName')?.touched) {
+      contactForm.get('lastName')?.touched ||
+      contactForm.get('lastName')?.dirty) {
       <div>
         @if (contactForm.get('lastName')?.errors?.['required']) {
         <span>Last name is required</span>
@@ -40,7 +42,7 @@
       <label for="phone">Phone:</label>
       <input id="phone" type="tel" formControlName="phone" />
       @if (contactForm.get('phone')?.invalid &&
-      contactForm.get('phone')?.touched) {
+      contactForm.get('phone')?.touched || contactForm.get('phone')?.dirty) {
       <div>
         @if (contactForm.get('phone')?.errors?.['required']) {
         <span>Phone is required</span>
@@ -55,7 +57,7 @@
       <label for="email">Email:</label>
       <input id="email" type="email" formControlName="email" />
       @if (contactForm.get('email')?.invalid &&
-      contactForm.get('email')?.touched) {
+      contactForm.get('email')?.touched || contactForm.get('email')?.dirty) {
       <div>
         @if (contactForm.get('email')?.errors?.['required']) {
         <span>Email is required</span>
@@ -70,7 +72,8 @@
       <label for="birthDate">Birth Date:</label>
       <input id="birthDate" type="date" formControlName="birthDate" />
       @if (contactForm.get('birthDate')?.invalid &&
-      contactForm.get('birthDate')?.touched) {
+      contactForm.get('birthDate')?.touched ||
+      contactForm.get('birthDate')?.dirty) {
       <div>
         @if (contactForm.get('birthDate')?.errors?.['required']) {
         <span>Birth date is required</span>
@@ -83,7 +86,8 @@
       <label for="address">Address:</label>
       <input id="address" type="text" formControlName="address" />
       @if (contactForm.get('address')?.invalid &&
-      contactForm.get('address')?.touched) {
+      contactForm.get('address')?.touched || contactForm.get('address')?.dirty)
+      {
       <div>
         @if (contactForm.get('address')?.errors?.['required']) {
         <span>Address is required</span>

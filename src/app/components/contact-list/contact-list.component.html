@@ -16,6 +16,7 @@
       <h3>{{ contact.firstName }} {{ contact.lastName }}</h3>
       <p>{{ contact.phone }}</p>
       <button [routerLink]="['/contact', contact.id]">View Details</button>
+      <button [routerLink]="['/contact', contact.id, 'edit']">Edit</button>
     </div>
     }
   </div>

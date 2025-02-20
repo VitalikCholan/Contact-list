@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { Contact } from '../../models/contact.model';
 import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact-details',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './contact-details.component.html',
   styleUrl: './contact-details.component.css',
 })

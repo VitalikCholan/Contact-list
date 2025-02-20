@@ -17,6 +17,11 @@
     <p>{{ contact.address }}</p>
   </div>
 
+  <div>
+    <label>Birth Date:</label>
+    <p>{{ contact.birthDate | date : "dd/MM/yyyy" }}</p>
+  </div>
+
   }
   <button (click)="goBack()">Back to List</button>
 </div>
